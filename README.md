@@ -87,10 +87,15 @@ El despliegue en la plataforma de nube Render requiere una transición formal de
 
 #### 5. Despliegue Exitoso en Render
 
-![Despliegue Render](https://mi-proyecto-python-samuel-usma-brand.onrender.com)
+![Despliegue Render](https://mi-proyecto-python-samuel-usma-brand.onrender.com)  https://github.com/g3in-unilasallista/mi_proyecto_python/pull/13
 
 ---
 
+#### 6. Pull request
+
+![Despliegue Render](https://github.com/g3in-unilasallista/mi_proyecto_python/pull/13)  
+
+---
 ## 🚀 Aprende a Replicar este Proyecto
 
 Guía paso a paso para construir la aplicación en tu propia máquina.
