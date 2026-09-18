@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido a la Naturaleza | Flask App</title>
+    <title>Bienvenido a la Experiencia Flask | Samuel Usma Brand</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,15 +14,15 @@
 
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #0b2b1a 0%, #1b4332 40%, #2d6a4f 100%);
+            --bg-gradient: linear-gradient(135deg, #120924 0%, #2a1845 40%, #4a2875 100%);
             --card-bg: rgba(255, 255, 255, 0.08);
             --card-border: rgba(255, 255, 255, 0.15);
-            --primary-light: #d8f3dc;
-            --accent-sage: #95d5b2;
-            --accent-green: #52b788;
-            --accent-gold: #e9c46a;
-            --text-main: #f8f9fa;
-            --text-sub: #b7e4c7;
+            --primary-light: #f3e8ff;
+            --accent-sage: #d8b4fe;
+            --accent-green: #a855f7;
+            --accent-gold: #f472b6;
+            --text-main: #fcf8ff;
+            --text-sub: #e9d5ff;
         }
 
         * {
@@ -48,7 +48,7 @@
         .bg-shape {
             position: absolute;
             z-index: 0;
-            opacity: 0.12;
+            opacity: 0.15;
             pointer-events: none;
         }
 
@@ -77,7 +77,7 @@
             border-radius: 28px;
             padding: 60px 40px;
             text-align: center;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
             animation: fadeIn 1s ease-out;
         }
 
@@ -100,11 +100,11 @@
             align-items: center;
             width: 96px;
             height: 96px;
-            background: linear-gradient(135deg, rgba(82, 183, 136, 0.2), rgba(149, 213, 178, 0.4));
-            border: 1px solid rgba(149, 213, 178, 0.4);
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(216, 180, 254, 0.4));
+            border: 1px solid rgba(216, 180, 254, 0.4);
             border-radius: 50%;
             margin-bottom: 24px;
-            box-shadow: 0 10px 25px rgba(82, 183, 136, 0.25);
+            box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3);
             transition: transform 0.4s ease;
         }
 
@@ -158,17 +158,17 @@
         }
 
         .feature-card:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.12);
             transform: translateY(-6px);
-            border-color: var(--accent-green);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            border-color: var(--accent-sage);
+            box-shadow: 0 12px 24px rgba(168, 85, 247, 0.25);
         }
 
         .card-icon {
             width: 44px;
             height: 44px;
             margin-bottom: 16px;
-            fill: var(--accent-green);
+            fill: var(--accent-sage);
         }
 
         .feature-card h3 {
@@ -190,8 +190,8 @@
             align-items: center;
             gap: 8px;
             padding: 8px 18px;
-            background: rgba(45, 106, 79, 0.6);
-            border: 1px solid var(--accent-green);
+            background: rgba(74, 40, 117, 0.6);
+            border: 1px solid var(--accent-sage);
             border-radius: 50px;
             font-size: 0.88rem;
             color: var(--primary-light);
@@ -202,27 +202,121 @@
         .status-dot {
             width: 10px;
             height: 10px;
-            background-color: var(--accent-green);
+            background-color: var(--accent-gold);
             border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-green);
+            box-shadow: 0 0 10px var(--accent-gold);
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
             0% {
                 transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(82, 183, 136, 0.7);
+                box-shadow: 0 0 0 0 rgba(244, 114, 182, 0.7);
             }
 
             70% {
                 transform: scale(1);
-                box-shadow: 0 0 0 8px rgba(82, 183, 136, 0);
+                box-shadow: 0 0 0 8px rgba(244, 114, 182, 0);
             }
 
             100% {
                 transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(82, 183, 136, 0);
+                box-shadow: 0 0 0 0 rgba(244, 114, 182, 0);
             }
+        }
+
+        /* ESTILOS DE LA SECCIÓN DE QUIZ INTERACTIVO */
+        .quiz-section {
+            margin-top: 45px;
+            background: rgba(18, 9, 36, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: left;
+        }
+
+        .quiz-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-light);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quiz-question {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option-card {
+            display: flex;
+            align-items: center;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .option-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--accent-sage);
+        }
+
+        .option-card input[type="radio"] {
+            margin-right: 14px;
+            accent-color: var(--accent-green);
+            transform: scale(1.2);
+        }
+
+        .btn-quiz {
+            margin-top: 22px;
+            background: linear-gradient(135deg, var(--accent-green), #6b21a8);
+            color: #fff;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-quiz:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
+        }
+
+        .feedback-box {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: 600;
+            display: none;
+        }
+
+        .feedback-success {
+            background: rgba(88, 28, 135, 0.5);
+            border: 1px solid var(--accent-sage);
+            color: #f3e8ff;
+        }
+
+        .feedback-error {
+            background: rgba(153, 27, 27, 0.4);
+            border: 1px solid #f87171;
+            color: #fef08a;
         }
 
         /* Responsivo */
@@ -244,16 +338,16 @@
 
 <body>
 
-    <!-- SVG Fondo Decorativo 1: Hojas -->
+    <!-- SVG Fondo Decorativo 1 -->
     <svg class="bg-shape bg-shape-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#52B788"
+        <path fill="#C084FC"
             d="M44.7,-67.6C56.9,-58.5,65.1,-44.6,70.7,-29.9C76.3,-15.1,79.2,0.6,76.5,15.6C73.8,30.6,65.4,45,53.8,55.3C42.2,65.6,27.3,71.8,11.5,73.6C-4.3,75.4,-21.1,72.7,-35.8,65.1C-50.5,57.5,-63.1,45,-70.6,29.9C-78.1,14.8,-80.5,-2.9,-76.3,-19C-72.1,-35.1,-61.3,-49.6,-47.5,-58.4C-33.7,-67.2,-16.9,-70.3,-0.1,-70.2C16.6,-70.1,32.5,-76.7,44.7,-67.6Z"
             transform="translate(100 100)" />
     </svg>
 
-    <!-- SVG Fondo Decorativo 2: Montañas/Ramas -->
+    <!-- SVG Fondo Decorativo 2 -->
     <svg class="bg-shape bg-shape-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#74C69D"
+        <path fill="#E879F9"
             d="M38.1,-52.3C49.7,-43.8,60,-32.8,65.2,-19.4C70.4,-6.1,70.4,9.6,64.8,23.3C59.2,37,47.9,48.7,34.7,56.7C21.4,64.7,6.3,69,-9.2,70.3C-24.7,71.6,-40.5,69.9,-52.8,61.4C-65.1,52.8,-73.8,37.3,-76.2,20.8C-78.6,4.3,-74.6,-13.3,-66.1,-27.8C-57.6,-42.3,-44.5,-53.8,-30.7,-61.2C-16.9,-68.5,-2.4,-71.7,10.6,-68C23.6,-64.3,26.5,-60.8,38.1,-52.3Z"
             transform="translate(100 100)" />
     </svg>
@@ -266,7 +360,7 @@
             Servidor Flask Activo & Corriendo
         </div>
 
-        <!-- Icono Principal SVG: Árbol de la Vida -->
+        <!-- Icono Principal SVG -->
         <div class="hero-icon-wrapper">
             <svg class="hero-icon" viewBox="0 0 24 24">
                 <path
@@ -276,23 +370,20 @@
 
         <!-- Título Principal Centrado y Grande -->
         <h1>¡Bienvenido a la Experiencia Flask!</h1>
-        <p class="subtitle">Tu aplicación en Python está lista, conectada y lista para florecer en un entorno armónico
-            con los colores de la naturaleza.</p>
+        <p class="subtitle">Tu aplicación en Python está lista y personalizada con un estilo moderno en tonos lila y lavanda.</p>
 
-        <!-- Cuadrícula con SVGs Ilustrativos -->
+        <!-- Cuadrícula de Tarjetas -->
         <div class="features-grid">
 
-            <!-- Tarjeta 1: Hoja / Crecimiento -->
             <div class="feature-card">
                 <svg class="card-icon" viewBox="0 0 24 24">
                     <path
                         d="M17,8C8,10 59,16.17 3.82,21.34L5.23,22.75C11.4,17.58 14,9 17,8M12.43,15.58C12.12,14.6 11.5,13.62 10.5,12.75C8.16,10.68 4.79,10.29 2,11C2.5,13.88 3.5,17 6.5,18.88C8.13,19.9 9.89,20 11.38,19.62L12.43,15.58M17,3C12,3 8.44,6.25 7.08,9.77C9.37,9.75 11.83,10.5 13.75,12.2C15.67,13.9 16.5,16.32 16.29,18.61C19.68,16.94 22,13.2 22,8.5C22,5.4 19.5,3 17,3Z" />
                 </svg>
-                <h3>Diseño Orgánico</h3>
-                <p>Estilos inspirados en bosques, vegetación y paletas armónicas relajantes.</p>
+                <h3>Diseño Creativo</h3>
+                <p>Interfaz renovada con paleta lila, efectos translúcidos y acentos suaves.</p>
             </div>
 
-            <!-- Tarjeta 2: Montaña / Solidez -->
             <div class="feature-card">
                 <svg class="card-icon" viewBox="0 0 24 24">
                     <path d="M14,6L10.25,11L13.1,14.8L11.5,16C9.81,13.75 7,10 7,10L1,18H23L14,6Z" />
@@ -301,20 +392,88 @@
                 <p>Potenciado por la solidez y velocidad del backend en Python y Flask.</p>
             </div>
 
-            <!-- Tarjeta 3: Agua / Fluidez -->
             <div class="feature-card">
                 <svg class="card-icon" viewBox="0 0 24 24">
                     <path d="M12,20A6,6 0 0,1 6,14C6,10 12,3.25 12,3.25C12,3.25 18,10 18,14A6,6 0 0,1 12,20Z" />
                 </svg>
                 <h3>Fluidez Visual</h3>
                 <p>Efectos modernos de cristal, sombras suaves e interacciones responsivas.</p>
-
             </div>
 
         </div>
-        <p align="center">Creado por Feibert Alirio Guzmán Pérez</p>
+
+        <!-- SECCIÓN DEL QUIZ INTERACTIVO -->
+        <div class="quiz-section">
+            <h2 class="quiz-title">
+                🧠 Quiz Interactivo: Arquitecturas de Software
+            </h2>
+            <p class="quiz-question">¿Cuál es la principal característica de la arquitectura hexagonal?</p>
+
+            <form id="quizForm">
+                <div class="options-container">
+                    <label class="option-card">
+                        <input type="radio" name="respuesta" value="A">
+                        <span>A) Acoplar fuertemente la base de datos a la lógica del negocio.</span>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="radio" name="respuesta" value="B">
+                        <span>B) Aislar el núcleo del negocio mediante el uso de puertos y adaptadores.</span>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="radio" name="respuesta" value="C">
+                        <span>C) Funcionar únicamente para desarrollos orientados a microservicios en la nube.</span>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="radio" name="respuesta" value="D">
+                        <span>D) Reemplazar por completo el protocolo HTTP por conexiones de sockets.</span>
+                    </label>
+                </div>
+
+                <button type="button" class="btn-quiz" onclick="evaluarQuiz()">Comprobar Respuesta</button>
+            </form>
+
+            <div id="feedbackBox" class="feedback-box"></div>
+        </div>
+
+        <p align="center" style="margin-top: 30px; opacity: 0.8; font-size: 0.9rem;">
+            Creado por Feibert Alirio Guzmán Pérez & Modificado por Samuel Usma Brand
+        </p>
     </div>
 
+    <!-- SCRIPT DE VALIDACIÓN EN JAVASCRIPT -->
+    <script>
+        function evaluarQuiz() {
+            const opciones = document.getElementsByName('respuesta');
+            let opcionSeleccionada = null;
+
+            for (const op of opciones) {
+                if (op.checked) {
+                    opcionSeleccionada = op.value;
+                    break;
+                }
+            }
+
+            const feedback = document.getElementById('feedbackBox');
+            feedback.style.display = 'block';
+
+            if (!opcionSeleccionada) {
+                feedback.className = 'feedback-box feedback-error';
+                feedback.innerHTML = '⚠️ Por favor, selecciona una alternativa antes de enviar la respuesta.';
+                return;
+            }
+
+            if (opcionSeleccionada === 'B') {
+                feedback.className = 'feedback-box feedback-success';
+                feedback.innerHTML = '✅ <strong>¡Respuesta Correcta!</strong> La arquitectura hexagonal busca aislar el dominio principal de la infraestructura tecnológica mediante Puertos y Adaptadores.';
+            } else {
+                feedback.className = 'feedback-box feedback-error';
+                feedback.innerHTML = '❌ <strong>Respuesta Incorrecta.</strong> Revisa el concepto de Puertos y Adaptadores e inténtalo nuevamente.';
+            }
+        }
+    </script>
 </body>
 
 </html>
