@@ -87,7 +87,7 @@ El despliegue en la plataforma de nube Render requiere una transición formal de
 
 #### 5. Despliegue Exitoso en Render
 
-![Despliegue Render](https://mi-proyecto-python-bl7d.onrender.com) 
+[Despliegue Render](https://mi-proyecto-python-bl7d.onrender.com) 
 
 ---
 
