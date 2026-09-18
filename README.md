@@ -93,7 +93,7 @@ El despliegue en la plataforma de nube Render requiere una transición formal de
 
 #### 6. Pull request
 
-![Pull Request](https://github.com/g3in-unilasallista/mi_proyecto_python/pull/13)  
+[Pull Request](https://github.com/g3in-unilasallista/mi_proyecto_python/pull/13)  
 
 ---
 ## 🚀 Aprende a Replicar este Proyecto
